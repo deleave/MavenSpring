@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>品牌展示</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-size: 12px;
+            text-align: center;
+        }
+        a{
+            color: #04D;
+            text-decoration: none;
+        }
+
+        a.hover{
+            color: #F50;
+            text-decoration: none;
+        }
+        .SubCategoryBox{
+            width: 600px;
+            text-align: center;
+            margin: 40px auto 0;
+        }
+        .SubCategoryBox ul{
+            list-style: none;
+        }
+        .SubCategoryBox ul li{
+            display: block;
+            float: left;
+            width: 200px;
+            line-height: 20px;
+        }
+        .showmore a,.showless a{
+            display: block;
+            width: 120px;
+            margin: 0 auto;
+            line-height: 24px;
+            border: 1px solid #AAA;
+        }
+        .showmore a span{
+            padding-left: 15px;
+            background: seashell;
+        }
+        .showless a span{
+            padding-left: 15px;
+            background: #bfa;
+        }
+        .promoted a{
+            color: #F50;
+        }
+    </style>
+    <link type="text/css" href="../../Webcss/bootstrap-3.3.7-dist/css/bootstrap.min.css"
+          rel="stylesheet"/>
+    <script type="text/javascript" src="../../JavaScript/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../../Webcss/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function (){
+            //初始状态
+           $("li:gt(5):not(:last)").hide();
+        });
+        $("div div a").click(function (){
+            alert("1");
+            //让某些品牌显示或隐藏
+            $("li:gt(5):not(:last)").toggle();
+            return false;
+        });
+
+    </script>
+</head>
+<body>
+<div class="SubCategoryBox">
+    <ul>
+        <li><a href="#">佳能</a><i>(30440)</i></li>
+        <li><a href="#">索尼</a><i>(27220)</i></li>
+        <li><a href="#">三星</a><i>(20000)</i></li>
+        <li><a href="#">尼康</a><i>(17821)</i></li>
+        <li><a href="#">松下</a><i>(12289)</i></li>
+        <li><a href="#">卡西欧</a><i>(8242)</i></li>
+        <li><a href="#">富士</a><i>(96943)</i></li>
+        <li><a href="#">柯达</a><i>(45137)</i></li>
+        <li><a href="#">宾得</a><i>(57342)</i></li>
+        <li><a href="#">理光</a><i>(9520)</i></li>
+        <li><a href="#">奥林巴斯</a><i>(12205)</i></li>
+        <li><a href="#">明基</a><i>(2578)</i></li>
+        <li><a href="#">爱国者</a><i>(1466)</i></li>
+        <li><a href="#">其他品牌</a><i>(3091)</i></li>
+    </ul>
+    <div >
+        <a href="#"><span class="caret">显示全部品牌</span></a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习一</title>
+    <script type="text/javascript" src="../../JavaScript/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(function (){
+            //全选绑定单击事件
+            $("#checkedAll").click(function (){
+                $(":checkbox").prop("checked",true);
+            });
+            //全不选选绑定单击事件
+            $("#checkedNone").click(function (){
+                $(":checkbox").prop("checked",false);
+            });
+            //反选单击事件
+            $("#checkedRev").click(function (){
+               $(":checkbox[name='items']").each(function (){
+                   //each遍历的function函数中，有一个dom对象this
+                   this.checked=!this.checked;
+
+               });
+
+                //要检查是否满选
+                //获取全部的球类个数
+                var allCount=$(":checkbox[name='items']").length;
+                var checkedCount=$(":checkbox[name='items']:checked").length;
+                // if (allCount==checkedCount) {
+                //     $("#checkedAllBox").prop("checked", true);
+                // }
+                // else {
+                //     $("#checkedAllBox").prop("checked", false);
+                // }
+                //优化代码
+                $("#checkedAllBox").prop("checked", allCount===checkedCount);
+
+            });
+            //【提交】单击事件
+            $("#post").click(function (){
+                //获取选中的球类复选框
+                $(":checkbox[name='items']:checked").each(function (){
+                    alert(this.value);
+                });
+            });
+            //给全选/全不选绑定单击事件
+            $("#checkedAllBox").click(function (){
+                //在事件的function中有一个this对象，这个this对象是当前正在响应事件的dom对象
+                // alert(this.checked);
+                $(":checkbox[name='items']").prop("checked",this.checked);//this.checked可以运用与判断
+            });
+            //给所有球类绑定单击事件
+            $(":checkbox[name='items']").click(function (){
+                //要检查是否满选
+                //获取全部的球类个数
+                var allCount=$(":checkbox[name='items']").length;
+                var checkedCount=$(":checkbox[name='items']:checked").length;
+
+                //优化代码
+                $("#checkedAllBox").prop("checked", allCount===checkedCount);
+
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+<form method="post" action="">
+   你爱好的运动是？ <input type="checkbox" id="checkedAllBox"/>全选/全不选
+    <br>
+    <input type="checkbox" name="items" value="篮球"/>篮球
+    <input type="checkbox" name="items" value="足球"/>足球
+    <input type="checkbox" name="items" value="乒乓球"/>乒乓球
+    <input type="checkbox" name="items" value="羽毛球"/>羽毛球
+    <input type="checkbox" name="items" value="网球"/>网球
+</form>
+<button id="checkedAll">全选</button>
+<button id="checkedNone">全不选</button>
+<button id="checkedRev">反选</button>
+<button id="post">提交</button>
+
+
+
+
+</body>
+</html>

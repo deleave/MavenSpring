@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>核心函数</title>
+    <!--$是jQuery的核心函数,可以完成很多功能 $()就是调用$这个函数
+        1.$(函数)
+          表示页面加载完成之后
+          相当于window.onload=function(){}
+
+        2.$(HTML字符串)
+          会帮我们创建这个html标签对象
+
+        3.$(选择器字符串)
+         $("#id属性值")  id选择器，根据id查询标签对象
+         $("标签名")     标签名选择器，根据标签名查询标签对象
+
+        4.$(dom对象)
+          会将这个dom对象转换为jQuery对象
+         -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script><!--导入jQuery库-->
+    <script type="text/javascript">
+        //参数为函数
+        $(function (){
+            alert("界面加载完成后自动调用");
+            //参数为html字符串
+            $("<div>"+
+                    "<span>文本1</span>"+
+                    "<span>文本2</span>"+
+                "</div>"
+            ).appendTo("body");
+
+            //参数为选择器字符串
+            alert($("button").length);
+            //参数为dom对象
+            var btnObj=document.getElementById("btn1");
+            alert(btnObj);//dom对象
+            alert($(btnObj));//dom转换为jQuery对象
+
+        });
+
+
+    </script>
+</head>
+<body>
+<button id="btn1">按钮1</button>
+<button>按钮2</button>
+
+</body>
+</html>

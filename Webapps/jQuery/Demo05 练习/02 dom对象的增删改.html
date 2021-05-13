@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增删改</title>
+    <!--
+    内部插入
+      a.appendTo（b）    把a插到b元素末尾，成为最后一个子元素
+      a.prependTo(b)    把a插到b所有子元素前，成为第一个子元素
+
+    外部插入
+    insertAfter()       a.insertAfter(b)  a插到b后面得到ba
+    insertBefore()      a.insertBefore(b) a插到b前面得到ab
+
+    替换
+    replaceWith（）      a.replaceWith(b)  b替换掉所有a
+    replaceAll()        a.replaceAll(b)   a替换掉所有b
+
+    删除
+    remove（）           a.remove()        删除a标签
+    empty()             a.empty()         清空a标签
+      -->
+    <script type="text/javascript" src="../../JavaScript/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+
+
+        $(function (){
+            //内部插入 插入到标签内
+            $("<h1>标题</h1>").prependTo($("div"));
+            //外部插入
+            $("<h1>标题2</h1>").insertAfter($("#in"));
+            //清空标签内部文本
+            $("div span").empty();
+            //删除标签包括文本内容
+            // $("div span").remove();
+
+        })
+    </script>
+</head>
+<body>
+ 选择框1<input type="checkbox" name="item" id="in"/>
+ 选择框2<input type="checkbox" name="item"/>
+ <div id="di">abc
+   <span>
+       123
+   </span></div>
+
+</body>
+</html>

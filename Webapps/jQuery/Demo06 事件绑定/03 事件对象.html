@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象</title>
+<!--
+ 事件对象包含了很多信息 可以用来当作判断条件
+ 原生js获取事件对象 在赋值function函数中加入参数event（常用命名）
+
+-->
+    <script type="text/javascript" src="../../JavaScript/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        //js获取事件对象
+   /*     window.onload=function (){
+            document.getElementById("Big").onclick=function (event){
+               console.log(event);
+            }
+        }*/
+
+        //jQuery获取事件对象
+        $(function (){
+           /* $("#small").click(function (event){
+               console.log(event);
+            });*/
+            $("#Big").bind("mouseover mouseout",function (event){
+               if(event.type==="mouseover"){
+                   alert("鼠标移入");
+               }
+               else {
+                   alert("鼠标移出");
+               }
+            });
+
+        });
+
+
+    </script>
+</head>
+<body>
+<div id="Big">大大大大大大</div>
+<div id="small">小小小小小小</div>
+</body>
+</html>

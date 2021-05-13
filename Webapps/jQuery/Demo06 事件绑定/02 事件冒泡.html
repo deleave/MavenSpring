@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件冒泡</title>
+    <!--事件的冒泡是指 子元素和父元素同时监听一个事件
+        当触发子元素事件时，同一事件也被传到父元素响应
+
+        如何阻止事件冒泡？
+        在子元素事件中return false；
+        -->
+    <script type="text/javascript" src="../../JavaScript/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(function (){
+           $("#content").click(function (){
+               alert("我是div");
+           }) ;
+           $("span").click(function (){
+               alert("我是span");
+               return false;
+           });
+        });
+    </script>
+</head>
+<body>
+<div id="content">
+    我是div<br>
+    <span>我是span</span><br>
+    我是div
+</div>
+
+</body>
+</html>

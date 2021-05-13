@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS</title>
+    <!--
+     addClass()     添加样式
+     removeClass()  删除样式
+     toggleClass()  有就删除，没有添加
+     offset()       获取和设置元素坐标
+    -->
+    <script type="text/javascript" src="../../JavaScript/jquery-3.4.1.min.js"></script>
+    <script type="text/css">
+        div{
+            width: 100px;
+            height: 250px;
+        }
+        div.blueBorder{
+           border: 2px blueviolet solid ;
+        }
+        div.redBorder{
+            border: 4px rebeccapurple ;
+        }
+        div.redDiv{
+        background-color: red;
+        }
+    </script>
+    <script type="text/javascript">
+        var $divEle=$('div:first');
+       $(function (){
+           $('#btn0').click(function (){
+             //addClass()
+               $divEle.addClass('redDiv');
+             //   alert(1);
+           });
+           $("#btn1").click(function (){
+
+           });
+           $("#btn2").click(function (){
+
+           });
+           $("#btn3").click(function (){
+
+           });
+
+       });
+
+
+    </script>
+</head>
+<body>
+<table  align="center">
+    <tr>
+        <td>
+          <div class="border"></div>
+        </td>
+        <td class="btn">
+            <input type="button" value="addClass()" id="btn0"/>
+            <input type="button" value="removeClass()" id="btn1"/>
+            <input type="button" value="toggleClass()" id="btn2"/>
+            <input type="button" value="offset()" id="btn3"/>
+
+        </td>
+    </tr>
+</table>
+
+
+
+</body>
+</html>

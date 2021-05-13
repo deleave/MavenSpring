@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<books>
+    <book>
+        <sn>S2345</sn>
+        <name>追风筝的人</name>
+        <price>35.5￥</price>
+        <author>胡塞尼</author>
+    </book>
+    <book>
+        <sn>S6474</sn>
+        <name>面纱</name>
+        <price>29.5￥</price>
+        <author>毛姆</author>
+    </book>
+</books>

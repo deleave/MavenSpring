@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+</head>
+<body>
+ <!--表单
+    form是表单标签
+    input是单标签
+     -type属性是输入格式
+     -value属性是默认文本
+     -name属性是分组 内容相同则为同组
+     -checked=”checked“是默认选择
+     -type="checkbox" 是复选框
+    select是下拉列表
+     -option是下拉列表选项
+     type="reset" 表示重置按钮 value设置按钮名
+     type="submit" 表示提交按钮 value设置按钮名
+     type="Button" 表示按钮  value设置按钮名
+     type=file 表示选择文件发送给服务器
+     type=hidden 表示隐藏域，用户无法看见，但隐式的放松给了服务器（用户无法参与）
+
+    表单提交
+    action属性是表单提交的服务器 method属性是表单提交的方式
+    表单提交时数据没有发送给服务器的三种情况
+     1.表单项中没有name
+     2.单选、复选（下拉选项）中需添加value属性
+     3.表单项不在提交的form标签中
+
+     method属性值get请求与post请求特点
+     get请求特点
+      1.浏览器地址栏的数据是 action属性值+[?+请求参数
+        请求参数格式： name=value
+                    &
+                    name=value
+      2.不安全
+      3.有数据长度限制
+      post请求特点：
+      1.浏览器地址栏只显示 action属性值 即服务器地址
+      2.安全性高
+      3.理论上无数据长度限制
+
+
+ -->
+<form action="http://localhost:4513/Servlet_war_exploded/parameterServlet" method="post">
+    <h1 align="center">注册</h1>
+    <table align="center">
+        <tr>
+            <td>用户名:</td>
+            <td><input name="username" type="text" value="请输入昵称"/>
+            </td>
+        </tr>
+        <tr>
+            <td>用户密码:</td>
+            <td><input name="password" type="password" maxlength="6" />
+            </td>
+        </tr>
+        <tr>
+            <td>确认密码:</td>
+            <td><input name="password" type="password" maxlength="6"/>
+            </td>
+        </tr>
+        <tr>
+            <td>性别:</td>
+            <td><input type="radio" name="sex" checked="checked" value="man"/>男<input type="radio" name="sex" value="women" />女
+            </td>
+        </tr>
+        <tr>
+            <td>兴趣爱好：</td>
+            <td> <input name="hobby" type="checkbox" value="basketball"/>篮球<input name="hobby" type="checkbox" value="Rap"/>Rap<input name="hobby" type="checkbox" value="jump"/>唱跳
+            </td>
+        </tr>
+        <tr>
+            <td>国籍：</td>
+            <td><select name="country">
+                <option value="none">--请选择国籍--</option>
+                <option value="cn" selected="selected">中国</option>
+                <option value="o">澳大利亚</option>
+                <option value="us">美国</option>
+                <option value="jp">小日本</option>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td>自我评价：</td>
+            <td>
+                <textarea name="self" rows="10" cols="20">不少于100字</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="reset"> </td>
+            <td> <input type="submit"> </td>
+        </tr>
+        <tr>
+            <td> <input name="file" type="file"/></td>
+            <td>  <input type="button" value="完成"></td>
+            <td>  <input type="hidden" name="ada" /></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

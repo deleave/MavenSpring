@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉列表</title>
+    <script type="text/javascript" src="../../JavaScript/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(function (){
+           $("button:eq(0)").click(function (){
+               //将左边选中的添加到右边
+              $("select:eq(0) option:selected").appendTo($("select:eq(1)"));
+           });
+           $("button:eq(1)").click(function (){
+               //将左边的选项全部添加到右边
+               $("select:eq(0) option").appendTo($("select[name='sel02']"));
+           })
+            $("button:eq(2)").click(function (){
+                //将右边选中的添加到左边
+                $("select:eq(1) option:selected").appendTo($("select:eq(0)"));
+            });
+            $("button:eq(3)").click(function (){
+
+                //将右边全部添加到左边
+                $("select:eq(1) option").appendTo($("select:eq(0)"));
+            });
+        });
+
+    </script>
+</head>
+<body>
+<div id="left">
+    <select name="sel01" multiple="multiple">
+      <option value="value01">选项1</option>
+      <option value="value02">选项2</option>
+      <option value="value03">选项3</option>
+      <option value="value04">选项4</option>
+    </select>
+</div>
+<div id="right">
+    <select name="sel02" multiple="multiple">
+
+    </select>
+</div>
+
+<button>选中的移动到右边</button>
+<button>全部移动到右边</button>
+<br>
+<button>选中的移动到左边</button>
+<button>全部移动到左边</button>
+</body>
+</html>

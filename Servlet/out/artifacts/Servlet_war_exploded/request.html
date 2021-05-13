@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>get和post请求</title>
+<!--    Get请求和Post请求区分
+    Get：
+      1.form标签method="get"
+      2.a标签
+      3.imag标签引入图片
+      4.link标签引入css
+      5.Script标签引入js文件
+      6.iframe标签引入html文件
+      7.在浏览器输入地址后回车
+    Post：
+     1.form标签method="post"-->
+</head>
+<body>
+<form action="http://localhost:4513/Servlet_war_exploded/hello2" method="post">
+    <input type="hidden" name="action" value="login"/>
+    <input type="hidden" name="username" value="name"/>
+    <input type="submit"/>
+</form>
+
+</body>
+</html>

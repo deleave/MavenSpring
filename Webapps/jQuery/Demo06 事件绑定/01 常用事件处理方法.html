@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+    <!--写在前面
+    触发顺序？
+    原生js页面与jQuery页面相比加载要慢
+    原因：
+    $(function(){});              jQuery的页面加载完成之后是浏览器的内核解析完页面的变迁并且创建好Dom对象后就会马上执行
+    window.onload()=function(){}  原生js页面还要等标签显示内容加载完成。
+
+    执行次数：
+    1.原生js页面加载完成之后，指挥执行最后一次的赋值函数
+    2.jQuery的页面加载完成之后是把全部的注册function函数依次执行。
+
+    jQuery中其他的事件处理方法
+    click（）     它可以绑定单击事件，以及出发单击事件
+    mouseover（） 鼠标移入事件
+    mouseout（）  鼠标移出事件
+    bind（）      可以给元素一次绑定一个或多个事件
+    one（）       绑定只能响应一次的事件
+    unbind（）    解绑事件
+   -->
+    <link href="../Demo01%20入门/Demo1.css">
+    <script type="text/javascript" src="../../JavaScript/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+
+         $(function (){
+        //    $("h5").click(function (){
+        //        console.log("h5事件绑定");
+        //    });
+        $("h5").on("click",function (){
+           alert("h5单击事件");
+        });
+           $(" <h5 class=\"head\">什么是jQuery？</h5>").appendTo($("#pane1"));
+           //  $("h5").mouseover(function (){
+           //      console.log("进进");
+           //  });
+           //  $("h5").mouseout(function (){
+           //      console.log("出出");
+           //  });
+
+            // $("h5").one("click mouseover",function (){
+            //    console.log("one绑定事件");
+            // });
+            // $("h5").bind("click mouseover",function (){
+            //     console.log("bind绑定事件");
+            // });
+
+
+
+        });
+    </script>
+</head>
+<body>
+<div id="pane1">
+    <h5 class="head">什么是jQuery？</h5>
+    <div class="content">
+        jQuery是布拉布拉...
+    </div>
+</div>
+
+
+</body>
+</html>

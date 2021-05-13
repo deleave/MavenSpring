@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery对象</title>
+    <!--jQuery对象的本质是dom对象的数组+jQuery提供的一系列的功能函数
+
+       dom对象转jQuery对象(var $btnObj=$(dom对象))
+       1.先有dom对象
+       2.$(dom对象)
+
+       jQuery对象转dom对象
+       1.先有jQuery对象
+       2.jQuery对象[下标]去出相应的dom对象
+
+
+
+    -->
+    <script type="text/javascript" src="../../JavaScript/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(function (){
+            // var arr=[12,3,"ab",false];
+            // var $btnObj=$("button");
+            // for (var i=0;i<$btnObj.length;i++){
+            //     alert($btnObj[i]);
+            // }
+            //dom对象转成jQuery对象-->jQuery对象转成dom对象
+            alert($(document.getElementById("testDiv"))[0] );
+        });
+
+
+    </script>
+</head>
+<body>
+ <div id="testDiv">测试方法</div>
+ <button id="dom2dom">使用dom对象调用dom方法</button>
+ <button id="dom2jQuery">使用dom对象调用jQuery方法</button>
+ <button id="jQuery2jQuery">使用jQuery对象调用jQuery方法</button>
+ <button id="jQuery2dom">使用jQuery对象调用dom方法</button>
+
+</body>
+</html>

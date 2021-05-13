@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片跟随</title>
+    <style type="text/css">
+        body{
+            text-align: center;
+        }
+        #small{
+            margin-top: 150px;
+        }
+        #showBig{
+            position: absolute;
+            display: none;
+        }
+        img{
+
+        }
+    </style>
+    <script type="text/javascript" src="../../JavaScript/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(function (){
+            //绑定事件
+            $("#small").bind("mouseover mouseout mousemove",function (event){
+               if (event.type==="mouseover"){
+                   $("#showBig").show();
+               }
+               else if (event.type==="mouseout"){
+                   $("#showBig").hide();
+               }else if (event.type==="mousemove"){
+                 $("#showBig").offset({
+                     left:event.pageX+20,
+                     top :event.pageY+20
+
+                 });
+               }
+            });
+        });
+        
+    </script>
+</head>
+<body>
+ <img id="small" src="../img/2.jpg"/>
+<div id="showBig">
+    <img src="../img/1.jpg"/>
+</div>
+
+</body>
+</html>
