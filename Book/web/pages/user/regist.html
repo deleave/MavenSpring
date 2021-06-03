@@ -3,8 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <title>尚硅谷会员注册页面</title>
-<link type="text/css" rel="stylesheet" href="../../static/css/style.css" >
-	<script type="text/javascript" src="../../../JavaScript/jquery-3.4.1.min.js"></script>
+<!--	写base标签,永远固定相对路径跳转的结果 写到工程路径-->
+	<base href="http://localhost:4513/Book/">
+<link type="text/css" rel="stylesheet" href="static/css/style.css" >
+	<script type="text/javascript" src="static/script/jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
 
 		$(function (){
@@ -52,7 +54,7 @@
 				//去掉验证码的前后空格
 				 idcode=$.trim(idcode);
 				//验证
-				if (idcode!==null||idcode==""){
+				if (idcode==null||idcode==""){
 					$("span.errorMsg").text("验证码不能为空");
 					return false;
 				}
@@ -71,7 +73,7 @@
 </head>
 <body>
 		<div id="login_header">
-			<img class="logo_img" alt="" src="../../static/img/logo.gif" >
+			<img class="logo_img" alt="" src="static/img/logo.gif" >
 		</div>
 		
 			<div class="login_banner">
@@ -88,7 +90,7 @@
 								<span class="errorMsg"></span>
 							</div>
 							<div class="form">
-								<form action="regist_success.html">
+								<form action="registServlet" method="post">
 									<label>用户名称：</label>
 									<input class="itxt" type="text" placeholder="请输入用户名"
 										   autocomplete="off" tabindex="1" name="username" id="username" />
@@ -110,8 +112,8 @@
 									<br />
 									<br />
 									<label>验证码：</label>
-									<input class="itxt" type="text" style="width: 150px;" id="code"/>
-									<img alt="" src="../../static/img/code.bmp" style="float: right; margin-right: 40px">									
+									<input class="itxt" type="text" name="code" style="width: 150px;" id="code"/>
+									<img alt="" src="static/img/code.bmp" style="float: right; margin-right: 40px">
 									<br />
 									<br />
 									<input type="submit" value="注册" id="sub_btn" />
